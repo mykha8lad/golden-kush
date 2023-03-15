@@ -1,0 +1,15 @@
+D:\c#-projects\GoldenKush\GoldenKush\bin\Debug\net7.0\GoldenKush.exe
+D:\c#-projects\GoldenKush\GoldenKush\bin\Debug\net7.0\GoldenKush.deps.json
+D:\c#-projects\GoldenKush\GoldenKush\bin\Debug\net7.0\GoldenKush.runtimeconfig.json
+D:\c#-projects\GoldenKush\GoldenKush\bin\Debug\net7.0\GoldenKush.dll
+D:\c#-projects\GoldenKush\GoldenKush\bin\Debug\net7.0\GoldenKush.pdb
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.csproj.AssemblyReference.cache
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.AssemblyInfoInputs.cache
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.AssemblyInfo.cs
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.csproj.CoreCompileInputs.cache
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.dll
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\refint\GoldenKush.dll
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.pdb
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\GoldenKush.genruntimeconfig.cache
+D:\c#-projects\GoldenKush\GoldenKush\obj\Debug\net7.0\ref\GoldenKush.dll
