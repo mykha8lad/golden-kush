@@ -33,7 +33,7 @@ namespace GoldenKush
             "Info",
             "Balance"
         }, (55, 13));
-
+         
         public void Start()
         {
             Console.CursorVisible = false;
@@ -41,13 +41,14 @@ namespace GoldenKush
             if (OperatingSystem.IsWindows())
                 Console.SetBufferSize(Console.WindowWidth, Console.WindowHeight);
             DisplayLogo();
-            
-            var selection = TitleScreen.Start();            
 
-            if (selection == null) return;            
+            var selection = TitleScreen.Start();
+
+            if (selection == null) return;
             if (selection == "Play")
             {
-                Console.Clear();
+                Box.Start();
+                Box.ResetGame();
                 Start();
             }
             else if (selection == "Settings")
@@ -61,7 +62,7 @@ namespace GoldenKush
                 Start();
             }
             else if (selection == "Balance")
-            {                
+            {
                 Console.Clear();
                 Start();
             };
