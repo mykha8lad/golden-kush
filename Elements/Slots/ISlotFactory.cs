@@ -11,7 +11,7 @@ public interface ISlotFactory
     ISlot CreateSlot();
 }
 
-public class StrawberrySlotFactory : ISlotFactory
+/*public class StrawberrySlotFactory : ISlotFactory
 {
     public ISlot CreateSlot()
     {
@@ -49,5 +49,5 @@ public class SevenSlotFactory : ISlotFactory
     {
         return new SevenSlot();
     }
-}
+}*/
 

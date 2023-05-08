@@ -83,7 +83,7 @@ internal class GeneralPage
         if (selection == "Play")
         {
             Console.Clear();
-            Game.Start();            
+            Game.Start();          
             Start();
         }
         else if (selection == "Settings")

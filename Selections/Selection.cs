@@ -154,7 +154,6 @@ internal class Selection
         }
 
         Console.SetCursorPosition(x, y);
-        //Console.ForegroundColor = ConsoleColor.Red;
         Console.ForegroundColor = ConsoleColor.DarkCyan;
         var show2 = SelectionsArray[0].Split('\n');
         for (int item = 0; item < show2.Length; item++)
@@ -173,7 +172,6 @@ internal class Selection
 
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.SetCursorPosition(x + j, y);
-                //Console.Write(SelectionsArray[Index] + "  ");
                 var show3 = SelectionsArray[Index].Split('\n');
                 for (int item = 0; item < show3.Length; item++)
                 {
@@ -184,10 +182,8 @@ internal class Selection
                 Index++;
                 j += 20;
 
-                //Console.ForegroundColor = ConsoleColor.Red;
                 Console.ForegroundColor = ConsoleColor.DarkCyan;               
                 Console.SetCursorPosition(x + j, y);
-                //Console.Write("" + SelectionsArray[Index]);
                 var show4 = SelectionsArray[Index].Split('\n');
                 for (int item = 0; item < show4.Length; item++)
                 {
@@ -201,7 +197,6 @@ internal class Selection
 
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.SetCursorPosition(x + j, y);
-                //Console.Write(SelectionsArray[Index] + "  ");
                 var show5 = SelectionsArray[Index].Split('\n');
                 for (int item = 0; item < show5.Length; item++)
                 {
@@ -212,20 +207,18 @@ internal class Selection
                 Index--;
                 j -= 20;
 
-                //Console.ForegroundColor = ConsoleColor.Red;
                 Console.ForegroundColor = ConsoleColor.DarkCyan;                
                 Console.SetCursorPosition(x + j, y);
-                //Console.Write("" + SelectionsArray[Index]);
                 var show6 = SelectionsArray[Index].Split('\n');
                 for (int item = 0; item < show6.Length; item++)
                 {
                     Console.SetCursorPosition(43, 20 + item);
                     Console.WriteLine(show6[item]);
                 }
+                Console.ResetColor();
             }
             else if (key == ConsoleKey.Enter || key == ConsoleKey.X)
-            {
-                Console.ResetColor();
+            {                
                 var i = Index;
                 Index = 0;
                 return key == ConsoleKey.Enter ? SelectionsArray[i]
