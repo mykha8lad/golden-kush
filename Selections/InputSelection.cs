@@ -20,7 +20,7 @@ class InputSelection
 
     internal Dictionary<string, string> Start()
     {
-        var (x, y)= Offset; 
+        var (x, y) = Offset;
 
         for (int i = 0; i < Selections.Length; i++)
         {
@@ -32,7 +32,7 @@ class InputSelection
         Console.Write("Press Tab to input.");
 
         Console.SetCursorPosition(x, y);
-        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.Write("> " + Selections.GetKVPString(0));
 
         while (true)
@@ -49,7 +49,7 @@ class InputSelection
 
                 Index++;
 
-                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.SetCursorPosition(x, y + Index);
                 Console.Write("> " + Selections.GetKVPString(Index));
             }
@@ -63,7 +63,7 @@ class InputSelection
 
                 Index--;
 
-                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.SetCursorPosition(x, y + Index);
                 Console.Write("> " + Selections.GetKVPString(Index));
             }
@@ -96,7 +96,7 @@ class InputSelection
 
                 Selections[Index] = new KeyValuePair<string, string>(kvp.Key, input);
 
-                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.SetCursorPosition(x, y + Index);
                 Console.Write("> " + Selections.GetKVPString(Index));
             }

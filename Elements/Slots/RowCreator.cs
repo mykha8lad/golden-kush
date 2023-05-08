@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,6 @@ class CasinoObjectFactory : ISlotFactory
 {
     public ISlot CreateSlot()
     {
-        // Генерируем случайное число для выбора объекта
         Random random = new Random();
         int objectIndex = random.Next(0, 4);
 
@@ -34,13 +34,16 @@ class CasinoObjectFactory : ISlotFactory
 }
 
 public class RowCreator
-{    
-    public void CreateRows()
+{
+    public void CreateRows(ref double balance, ref double rate, int index)
     {
         ISlotFactory factory = new CasinoObjectFactory();
-
+        double totalSum = rate / 2;
+        double itemSum = 0;
         List<ISlot> allObjects = new List<ISlot>();
-        
+        Random random = new Random();
+        int randomInt = random.Next(20);
+
         for (int i = 0; i < 3; i++)
         {
             ISlot obj = factory.CreateSlot();
@@ -49,8 +52,17 @@ public class RowCreator
 
         foreach (var item in allObjects)
         {
-            ISlot obj = item;
-            item.Display();
+            Console.Write($"{item.Display()}\t\t\t\t");
+            if (index == 9) itemSum += item.Display();
+        }
+
+        if (index == 9)
+        {
+            balance -= rate;
+            if (rate < 9) itemSum -= 5;
+            balance += totalSum += itemSum;
+
+            if (randomInt % 3 == 0) balance -= 3;
         }
     }
 }

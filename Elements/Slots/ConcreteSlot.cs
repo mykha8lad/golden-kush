@@ -8,40 +8,25 @@ namespace GoldenKush.Elements.Slots;
 
 public class StrawberrySlot : ISlot
 {
-    public void Display()
-    {
-        Console.Write("1\t\t\t\t");
-    }
+    public double Display() => 1;
 }
 
 public class PineappleSlot : ISlot
 {
-    public void Display()
-    {
-        Console.Write("2\t\t\t\t");
-    }
+    public double Display() => 2;
 }
 
 public class СherrySlot : ISlot
 {
-    public void Display()
-    {
-        Console.Write("2\t\t\t\t");
-    }
+    public double Display() => 3;
 }
 
 public class DrainSlot : ISlot
 {
-    public void Display()
-    {
-        Console.Write("3\t\t\t\t");
-    }
+    public double Display() => 4;
 }
 
 public class SevenSlot : ISlot
 {
-    public void Display()
-    {
-        Console.Write("4\t\t\t\t");
-    }
+    public double Display() => 5;
 }

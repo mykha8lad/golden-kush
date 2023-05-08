@@ -29,7 +29,7 @@ internal class Selection
         }
 
         Console.SetCursorPosition(x, y);
-        Console.ForegroundColor = ConsoleColor.Red;
+        Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.Write("> " + SelectionsArray[0]);
 
         while (true)
@@ -46,7 +46,7 @@ internal class Selection
 
                 Index++;
 
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.SetCursorPosition(x, y + Index);
                 Console.Write("> " + SelectionsArray[Index]);
             }
@@ -60,7 +60,7 @@ internal class Selection
 
                 Index--;
 
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.SetCursorPosition(x, y + Index);
                 Console.Write("> " + SelectionsArray[Index]);
             }
@@ -182,7 +182,7 @@ internal class Selection
                 Index++;
                 j += 20;
 
-                Console.ForegroundColor = ConsoleColor.DarkCyan;               
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.SetCursorPosition(x + j, y);
                 var show4 = SelectionsArray[Index].Split('\n');
                 for (int item = 0; item < show4.Length; item++)
@@ -207,7 +207,7 @@ internal class Selection
                 Index--;
                 j -= 20;
 
-                Console.ForegroundColor = ConsoleColor.DarkCyan;                
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.SetCursorPosition(x + j, y);
                 var show6 = SelectionsArray[Index].Split('\n');
                 for (int item = 0; item < show6.Length; item++)
@@ -218,7 +218,7 @@ internal class Selection
                 Console.ResetColor();
             }
             else if (key == ConsoleKey.Enter || key == ConsoleKey.X)
-            {                
+            {
                 var i = Index;
                 Index = 0;
                 return key == ConsoleKey.Enter ? SelectionsArray[i]

@@ -2,16 +2,21 @@
 using GoldenKush.Selections;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GoldenKush;
 
 internal class GeneralPage
 {
-    private string logo = @"
+    static string url = "https://www.example.com";
+
+    string logo = @"
 ░██████╗░░█████╗░██╗░░░░░██████╗░███████╗███╗░░██╗  ██╗░░██╗██╗░░░██╗░██████╗██╗░░██╗
 ██╔════╝░██╔══██╗██║░░░░░██╔══██╗██╔════╝████╗░██║  ██║░██╔╝██║░░░██║██╔════╝██║░░██║
 ██║░░██╗░██║░░██║██║░░░░░██║░░██║█████╗░░██╔██╗██║  █████═╝░██║░░░██║╚█████╗░███████║
@@ -19,11 +24,30 @@ internal class GeneralPage
 ╚██████╔╝╚█████╔╝███████╗██████╔╝███████╗██║░╚███║  ██║░╚██╗╚██████╔╝██████╔╝██║░░██║
 ░╚═════╝░░╚════╝░╚══════╝╚═════╝░╚══════╝╚═╝░░╚══╝  ╚═╝░░╚═╝░╚═════╝░╚═════╝░╚═╝░░╚═╝";
 
+    string textByInfo = $@"
+This application was developed by a techie
+named Mykhailichenko Vlad. Unfortunately, or maybe 
+fortunately, Golden Kush will not help you choose
+a good cannabis variety, Golden Kush is something
+nice, but if you still decide to combine nice
+with pleasure, write and drop your ideas here -->
+
+Press Enter to return";
+
+    string linkByInfo = $@"
+    Press G to open GitHub
+
+    Press T to open Telegram
+
+    Press I to open Instagram
+";
+
+
     // Settings
     static InputSelection BalanceSettings { get; } = new(new Dictionary<string, string>
     {
-        {"Balance", "0"},
-        {"Rate", "3"},
+        {"Balance", $"{Game.Balance}"},
+        {"Rate", $"{Game.Rate}"},
     }, (20, 7));
 
     static void ParseBalanceSettings(Dictionary<string, string> settings)
@@ -44,7 +68,7 @@ internal class GeneralPage
     }
     // Settings
 
-    private void DisplayLogo()
+    void DisplayLogo()
     {
         var logoByLine = logo.Split('\n');
         for (int i = 0; i < logoByLine.Length; i++)
@@ -54,18 +78,63 @@ internal class GeneralPage
         }
     }
 
+    void DisplayLink()
+    {
+        var linkByColumn = linkByInfo.Split('\n');
+        for (int i = 0; i < linkByColumn.Length; i++)
+        {
+            Console.SetCursorPosition(80, 8 + i);
+            Console.WriteLine(linkByColumn[i]);
+        }
+    }
+
+    void DisplayInfo()
+    {
+        var textInfo = textByInfo.Split('\n');
+        for (int i = 0; i < textInfo.Length; i++)
+        {
+            Console.SetCursorPosition(18, 5 + i);
+            Console.WriteLine(textInfo[i]);
+        }
+
+        DisplayLink();
+
+        ConsoleKeyInfo keyInfo;
+        do
+        {
+            keyInfo = Console.ReadKey(true);
+            if (keyInfo.Key == ConsoleKey.G)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://github.com/mykha8lad") { UseShellExecute = true });
+            }
+            if (keyInfo.Key == ConsoleKey.T)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://t.me/@xyzenok") { UseShellExecute = true });
+            }
+            if (keyInfo.Key == ConsoleKey.I)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://instagram.com/pepelnatelo?igshid=ZGUzMzM3NWJiOQ==") { UseShellExecute = true });
+            }
+            if (keyInfo.Key == ConsoleKey.Enter)
+            {
+                return;
+            }
+        } while (keyInfo.Key != ConsoleKey.Escape);
+
+        Console.Read();
+    }
+
     // Menu
-    private Selection TitleScreen { get; } = new(new[]
+    Selection TitleScreen { get; } = new(new[]
     {
         "Play",
-        "Settings",
+        "Balance",
         "Info",
-        "Balance"
-    }, (55, 13));
+    }, (57, 16));
     // Menu
 
     public void Start()
-    {            
+    {
         Console.CursorVisible = false;
         Console.Clear();
         if (OperatingSystem.IsWindows())
@@ -83,24 +152,20 @@ internal class GeneralPage
         if (selection == "Play")
         {
             Console.Clear();
-            Game.Start();          
-            Start();
-        }
-        else if (selection == "Settings")
-        {
-            Console.Clear();
-            var balanceSettings = BalanceSettings.Start();
-            ParseBalanceSettings(balanceSettings);
+            Game.Start();
             Start();
         }
         else if (selection == "Info")
         {
             Console.Clear();
+            DisplayInfo();
             Start();
         }
         else if (selection == "Balance")
         {
             Console.Clear();
+            var balanceSettings = BalanceSettings.Start();
+            ParseBalanceSettings(balanceSettings);
             Start();
         };
     }

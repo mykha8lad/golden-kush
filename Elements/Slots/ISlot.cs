@@ -9,5 +9,5 @@ namespace GoldenKush.Elements.Slots;
 
 public interface ISlot
 {
-    void Display();
+    double Display();
 }
