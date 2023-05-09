@@ -14,8 +14,6 @@ namespace GoldenKush;
 
 internal class GeneralPage
 {
-    static string url = "https://www.example.com";
-
     string logo = @"
 ░██████╗░░█████╗░██╗░░░░░██████╗░███████╗███╗░░██╗  ██╗░░██╗██╗░░░██╗░██████╗██╗░░██╗
 ██╔════╝░██╔══██╗██║░░░░░██╔══██╗██╔════╝████╗░██║  ██║░██╔╝██║░░░██║██╔════╝██║░░██║
@@ -24,7 +22,7 @@ internal class GeneralPage
 ╚██████╔╝╚█████╔╝███████╗██████╔╝███████╗██║░╚███║  ██║░╚██╗╚██████╔╝██████╔╝██║░░██║
 ░╚═════╝░░╚════╝░╚══════╝╚═════╝░╚══════╝╚═╝░░╚══╝  ╚═╝░░╚═╝░╚═════╝░╚═════╝░╚═╝░░╚═╝";
 
-    string textByInfo = $@"
+    string textByInfo = @"
 This application was developed by a techie
 named Mykhailichenko Vlad. Unfortunately, or maybe 
 fortunately, Golden Kush will not help you choose
@@ -34,7 +32,7 @@ with pleasure, write and drop your ideas here -->
 
 Press Enter to return";
 
-    string linkByInfo = $@"
+    string linkByInfo = @"
     Press G to open GitHub
 
     Press T to open Telegram
@@ -43,7 +41,7 @@ Press Enter to return";
 ";
 
 
-    // Settings
+    // Balance
     static InputSelection BalanceSettings { get; } = new(new Dictionary<string, string>
     {
         {"Balance", $"{Game.Balance}"},
@@ -66,7 +64,6 @@ Press Enter to return";
             null,
             out int rate)) Game.Rate = rate;
     }
-    // Settings
 
     void DisplayLogo()
     {
@@ -78,6 +75,7 @@ Press Enter to return";
         }
     }
 
+    // Info
     void DisplayLink()
     {
         var linkByColumn = linkByInfo.Split('\n');
@@ -131,7 +129,6 @@ Press Enter to return";
         "Balance",
         "Info",
     }, (57, 16));
-    // Menu
 
     public void Start()
     {
