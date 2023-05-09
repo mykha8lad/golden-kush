@@ -101,22 +101,10 @@ Press Enter to return";
         do
         {
             keyInfo = Console.ReadKey(true);
-            if (keyInfo.Key == ConsoleKey.G)
-            {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://github.com/mykha8lad") { UseShellExecute = true });
-            }
-            if (keyInfo.Key == ConsoleKey.T)
-            {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://t.me/@xyzenok") { UseShellExecute = true });
-            }
-            if (keyInfo.Key == ConsoleKey.I)
-            {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://instagram.com/pepelnatelo?igshid=ZGUzMzM3NWJiOQ==") { UseShellExecute = true });
-            }
-            if (keyInfo.Key == ConsoleKey.Enter)
-            {
-                return;
-            }
+            if (keyInfo.Key == ConsoleKey.G) System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://github.com/mykha8lad") { UseShellExecute = true });
+            if (keyInfo.Key == ConsoleKey.T) System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://t.me/@xyzenok") { UseShellExecute = true });            
+            if (keyInfo.Key == ConsoleKey.I) System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://instagram.com/pepelnatelo?igshid=ZGUzMzM3NWJiOQ==") { UseShellExecute = true });            
+            if (keyInfo.Key == ConsoleKey.Enter) return;            
         } while (keyInfo.Key != ConsoleKey.Escape);
 
         Console.Read();

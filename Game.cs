@@ -43,8 +43,6 @@ internal static class Game
         Box.DrawLineBoxes();
 
         Console.ForegroundColor = ConsoleColor.DarkRed;
-        Console.SetCursorPosition(18, 0);
-        Console.WriteLine("To change the rate and balance, go to the \"Settings\" section");
         Console.SetCursorPosition(29, 24);
         Console.WriteLine("Use < and > on your keyboard to navigate");
         Console.SetCursorPosition(15, 3);
