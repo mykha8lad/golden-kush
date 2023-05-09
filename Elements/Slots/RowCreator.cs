@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -12,7 +12,7 @@ class CasinoObjectFactory : ISlotFactory
 {
     public ISlot CreateSlot()
     {
-        Random random = new Random();
+        Random random = new();
         int objectIndex = random.Next(0, 4);
 
         switch (objectIndex)
@@ -41,7 +41,7 @@ public class RowCreator
         double totalSum = rate / 2;
         double itemSum = 0;
         List<ISlot> allObjects = new List<ISlot>();
-        Random random = new Random();
+        Random random = new();
         int randomInt = random.Next(20);
 
         for (int i = 0; i < 3; i++)
