@@ -36,6 +36,6 @@ ___
 [![5.jpg](https://i.postimg.cc/sXfMKrvj/5.jpg)](https://postimg.cc/NyVGfZ6S)
 ## When you click the __Spin__ item, a session is launched that spins random numbers, and then these values are processed by the algorithm, including the bet. The win rate is calculated.
 [![6.jpg](https://i.postimg.cc/sg6fyhXr/6.jpg)](https://postimg.cc/gxhbHr8S)
-# We can observe the balance change in the session window itself.
+## We can observe the balance change in the session window itself.
 [![7.jpg](https://i.postimg.cc/JnT55K7F/7.jpg)](https://postimg.cc/BLKFqTK5)
 # Hope you find this interesting
